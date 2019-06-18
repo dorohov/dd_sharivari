@@ -19,6 +19,87 @@
             }
         }
     }
+    &__descs {
+        overflow: hidden;
+        &__inner {
+            display: flex;
+            margin: 0 -35px;
+        }
+        &__block {
+            max-width: 50%;
+            width: 100%;
+            padding-left: 35px;
+            padding-right: 35px;
+            color: #fff;
+            &__heading {
+                margin-bottom: 20px;
+                font-size: 24px;
+                line-height: 24px;
+                padding-left: 95px;
+            }
+            &__text {
+                padding-left: 95px;
+                position: relative;
+                font-size: 16px;
+                line-height: 16px;
+                &::before {
+                    content: '';
+                    width: 83px;
+                    height: 76px;
+                    background: url(../../img/descs.svg);
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    margin-top: -40px;
+                }
+            }
+        }
+    }
+    &__block {
+        &-tw {
+            background: url(../../img/bg2.jpg);
+            padding-top: 130px;
+            &__top {
+                margin-bottom: 45px;
+            }
+            .__dd {
+                &__descs {
+                    &__block {
+                        &:first-child {
+                            .__dd__descs__block__text {
+                                max-width: #{557px + 95px};
+                            }
+                        }
+                        &:last-child {
+                            .__dd__descs__block__text {
+                                max-width: #{396px + 95px}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &-fv {
+            overflow: hidden;
+            &.__dd__is--red {
+                background: #911E1E;
+            }
+            &.__dd__is--dark {
+                background: #1E1E1C;
+            }
+            &__inner {
+                padding: 6px 0;
+                margin: 0 -6px;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            &__block {
+                padding: 6px;
+                max-width: 50%;
+                width: 100%;
+            }
+        }
+    }
 }
 
 @media (max-width: 1440px) {
@@ -41,11 +122,39 @@
     }
 }
 
+@media (max-width: 1025px) {
+    .__dd {
+        &__descs {
+            &__inner {
+                flex-wrap: wrap;
+            }
+            &__block {
+                max-width: 100%;
+                margin-bottom: 50px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
 @media (max-width: 768px) {
     .__dd {
         &__banner {
             &__logo {
                 max-width: 200px;
+            }
+        }
+        &__block {
+            &-fv {
+                &__inner {
+                    padding: 3px 0;
+                    margin: 0 -3px;
+                }
+                &__block {
+                    padding: 3px;
+                }
             }
         }
     }

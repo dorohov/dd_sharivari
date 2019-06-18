@@ -1,0 +1,21 @@
+.__dd__container {
+    max-width: #{1320px + 60px};
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.__dd__heading {
+    margin-bottom: 60px;
+    &__text {
+        font-size: 96px;
+        line-height: 96px;
+    }
+    &.__dd__is--center {
+        .__dd__heading__text {text-align: center;}
+    }
+    &.__dd__is--white {
+        color: #fff;
+    }
+}
