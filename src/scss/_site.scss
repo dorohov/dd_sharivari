@@ -1,0 +1,52 @@
+.__dd {
+    &__banner {
+        background: url(../../img/bg1.jpg);
+        &__inner {
+            min-height: 100vh;
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+        &__logo {
+            width: 100%;
+            max-width: 500px;
+            img {
+                max-width: 100%;
+                max-height: 100%;
+                width: auto;
+                height: auto;
+            }
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .__dd {
+        &__banner {
+            &__logo {
+                max-width: 350px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .__dd {
+        &__banner {
+            &__logo {
+                max-width: 300px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .__dd {
+        &__banner {
+            &__logo {
+                max-width: 200px;
+            }
+        }
+    }
+}
