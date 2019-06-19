@@ -176,7 +176,7 @@ gulp.task('build', function() {
 })
 
 gulp.task('default', gulp.series(
-    gulp.parallel('html', 'css', 'js', 'svgMap', 'imageMinify'),
-    // gulp.parallel('html', 'css', 'js', 'createBundleJs', 'svgMap', 'imageMinify'),
+    // gulp.parallel('html', 'css', 'js', 'svgMap', 'imageMinify'),
+    gulp.parallel('html', 'css', 'js', 'createBundleJs', 'svgMap', 'imageMinify'),
     gulp.parallel('build', 'browser_sync')
 ))
