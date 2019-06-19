@@ -1,4 +1,10 @@
 .__dd {
+    &__anim {
+        opacity: 0;
+    }
+    &__is--show {
+        opacity: 1;
+    }
     &__banner {
         background: url(../../img/bg1.jpg);
         &__inner {
@@ -31,6 +37,35 @@
             padding-left: 35px;
             padding-right: 35px;
             color: #fff;
+            &.is--purple {
+                color: #1E1E1C;
+                max-width: 100%;
+                .__dd {
+                    &__descs {
+                        &__block {
+                            &__text {
+                                max-width: #{665px + 95px};
+                                &::before {
+                                    background: url(../../img/descs_p.svg);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.is--pepper {
+                .__dd {
+                    &__descs {
+                        &__block {
+                            &__text {
+                                &::before {
+                                    background: url(../../img/descs_pp.svg);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
             &__heading {
                 margin-bottom: 20px;
                 font-size: 24px;
@@ -51,28 +86,47 @@
                     left: 0;
                     top: 50%;
                     margin-top: -40px;
+                    background-size: contain;
                 }
             }
         }
     }
     &__block {
         &-tw {
+            overflow: hidden;
             background: url(../../img/bg2.jpg);
             padding-top: 130px;
             &__top {
                 margin-bottom: 45px;
             }
-            .__dd {
-                &__descs {
+        }
+        &-fo {
+            background: url(../../img/bg4.jpg);
+            padding-top: 50px;
+            padding-bottom: 50px;
+            position: relative;
+            &__carousel {
+                &__items {
                     &__block {
-                        &:first-child {
-                            .__dd__descs__block__text {
-                                max-width: #{557px + 95px};
-                            }
+                        padding: 0 100px;
+                    }
+                }
+                &__controls {
+                    button {
+                        position: absolute;
+                        top: 50%;
+                        outline: none;
+                        cursor: pointer;
+                        background: transparent;
+                        border: none;
+                        margin-top: -40px;
+                        &.is--prev {
+                            left: 11vw;
                         }
-                        &:last-child {
-                            .__dd__descs__block__text {
-                                max-width: #{396px + 95px}
+                        &.is--next {
+                            right: 11vw;
+                            img {
+                                transform: rotate(180deg);
                             }
                         }
                     }
@@ -97,7 +151,53 @@
                 padding: 6px;
                 max-width: 50%;
                 width: 100%;
+                &__inner {
+                    overflow: hidden;
+                    img {
+                        transition: .25s all ease;
+                        &:hover {
+                            transform: scale(.99);
+                        }
+                    }
+                }
             }
+        }
+        &-th {
+            overflow: hidden;
+            background: #1E1E1C;
+            padding-top: 130px;
+            .__dd__heading {
+                margin-bottom: 130px;
+            }
+            &__bottom {
+                margin-top: -60px;
+                animation-duration: 2s;
+            }
+        }
+        &-sx {
+            background: url(../../img/bg6.jpg);
+            background-size: cover;
+            padding-top: 130px;
+            background-position: center;
+            overflow: hidden;
+            &__top {
+                margin-bottom: 80px;
+            }
+        }
+        &-ei {
+            overflow: hidden;
+            background: url(../../img/bg8.jpg);
+            background-size: cover;
+            padding-top: 130px;
+            &__bottom {
+                margin-top: -100px;
+                animation-duration: 2s;
+            }
+        }
+        &-ni {
+            overflow: hidden;
+            background: url(../../img/bg2.jpg);
+            padding-top: 130px;
         }
     }
 }
@@ -107,6 +207,15 @@
         &__banner {
             &__logo {
                 max-width: 350px;
+            }
+        }
+        &__descs {
+            &__block {
+                &__text {
+                    br {
+                        display: none;
+                    }
+                }
             }
         }
     }
@@ -136,6 +245,50 @@
                 }
             }
         }
+        &__block {
+            &-th {
+                .__dd__heading {
+                    margin-bottom: 60px;
+                }
+                &__top {
+                    margin-bottom: 50px;
+                }
+                &__bottom {
+                    margin-top: 0;
+                }
+            }
+            &-ei {
+                &__top {
+                    margin-bottom: 40px;
+                }
+                &__bottom {
+                    margin-top: 0;
+                }
+            }
+            &-fo {
+                &__carousel {
+                    &__items {
+                        &__block {
+                            padding: 0 50px;
+                        }
+                    }
+                    &__controls {
+                        button {
+                            margin-top: -30px;
+                            img {
+                                max-width: 60px;
+                            }
+                            &.is--prev {
+                                left: 12vw;
+                            }
+                            &.is--next {
+                                right: 12vw;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -146,7 +299,49 @@
                 max-width: 200px;
             }
         }
+        &__descs {
+            &__block {
+                &__heading {
+                    padding-left: 0;
+                }
+                &__text {
+                    padding-left: 0;
+                    &::before {
+                        content: none;
+                    }
+                }
+            }
+        }
         &__block {
+            &-tw {
+                padding-top: 40px;
+            }
+            &-th {
+                padding-top: 40px;
+                .__dd__heading {
+                    margin-bottom: 30px;
+                }
+            }
+            &-fo {
+                &__carousel {
+                    &__items {
+                        &__block {
+                            padding: 0 20px;
+                        }
+                    }
+                    &__controls {
+                        display: flex;
+                        justify-content: space-between;
+                        padding-top: 30px;
+                        button {
+                            position: static;
+                            display: block;
+                            margin-top: 0;
+                            padding: 0 40px;
+                        }
+                    }
+                }
+            }
             &-fv {
                 &__inner {
                     padding: 3px 0;
@@ -155,6 +350,18 @@
                 &__block {
                     padding: 3px;
                 }
+            }
+            &-sx {
+                padding-top: 40px;
+                &__top {
+                    margin-bottom: 30px;
+                }
+            }
+            &-ei {
+                padding-top: 40px;
+            }
+            &-ni {
+                padding-top: 40px;
             }
         }
     }

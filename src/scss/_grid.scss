@@ -8,14 +8,38 @@
 
 .__dd__heading {
     margin-bottom: 60px;
+    @extend .__dd__container;
     &__text {
         font-size: 96px;
         line-height: 96px;
     }
     &.__dd__is--center {
-        .__dd__heading__text {text-align: center;}
+        text-align: center;
+    }
+    &.__dd__is--left {
+        text-align: left;
     }
     &.__dd__is--white {
         color: #fff;
+    }
+    &__sub {
+        padding-top: 50px;
+    }
+    @media (max-width: 1440px) {
+        &__sub {
+            br {
+                display: none;
+            }
+        }
+    }
+    @media (max-width: 768px) {
+        margin-bottom: 30px;
+        &__text {
+            font-size: 42px;
+            line-height: 100%;
+        }
+        &__sub {
+            padding-top: 20px;
+        }
     }
 }
